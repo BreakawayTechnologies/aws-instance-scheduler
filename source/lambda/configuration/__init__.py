@@ -13,7 +13,9 @@
 
 import os
 
+#..\source\lambda\configuration\config_dynamodb_adapter.py
 from configuration.config_dynamodb_adapter import ConfigDynamodbAdapter
+#..\source\lambda\configuration\scheduler_config_builder.py
 from configuration.scheduler_config_builder import SchedulerConfigBuilder
 
 # environment parameter for configuration table
@@ -111,6 +113,8 @@ ENFORCED = "enforced"
 HIBERNATE = "hibernate"
 # retain running instances at end of period if they were already running at beginning of period
 RETAINED_RUNNING = "retain_running"
+# retain online servers at end of period if they were already online at beginning of period
+RETAINED_ONLINE = "retain_online"
 # started and stopped tags, these are set to started and stoped instances
 STARTED_TAGS = "started_tags"
 STOPPED_TAGS = "stopped_tags"

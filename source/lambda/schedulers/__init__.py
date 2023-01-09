@@ -12,6 +12,7 @@
 ######################################################################################################################
 from schedulers.ec2_service import Ec2Service
 from schedulers.rds_service import RdsService
+from schedulers.tfr_service import TfrService
 
 INST_ALLOW_RESIZE = "allow_resize"
 INST_RESIZED = "resized"
@@ -33,6 +34,17 @@ INST_ENGINE_TYPE = "engine_type"
 INST_DB_ARN = "db_inst_arn"
 INST_DB_IS_CLUSTER = "is_cluster"
 
+SERV_IS_ONLINE = "is_online"
+SERV_IS_OFFLINE = "is_offline"
+SERV_ID = "id"
+SERV_SCHEDULE = "schedule_name"
+SERV_NAME = "name"
+SERV_STATE = "state"
+SERV_STATE_NAME = "state_name"
+SERV_CURRENT_STATE = "current_state"
+SERV_TAGS = "tags"
+SERV_MAINTENANCE_WINDOW = "maintenance_window"
+
 PARAM_ACCOUNT = "account"
 PARAM_CONTEXT = "context"
 PARAM_DESIRED_TYPE = "desired_type"
@@ -49,13 +61,16 @@ PARAM_STACK = "stack_name"
 PARAM_CONFIG = "configuration"
 PARAM_CLUSTERS = "clusters"
 
+PARAM_STARTED_SERVERS = "started_servers"
+PARAM_STOPPED_SERVERS = "stopped_servers"
 
 # Services handled by the scheduler, the class that handles the logic for scheduling instances for each know service
 # must be registered here
 
 SCHEDULER_TYPES = {
     "ec2": Ec2Service,
-    "rds": RdsService
+    "rds": RdsService,
+    "tfr": TfrService
 }
 
 

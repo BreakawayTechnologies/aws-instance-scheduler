@@ -203,7 +203,8 @@ class SchedulerSetupHandler(CustomResource):
                                            enable_SSM_maintenance_windows=self.enable_SSM_maintenance_windows.lower() == "true",
                                            started_tags=self.started_tags,
                                            stopped_tags=self.stopped_tags)
-
+            self.logger.info("Logging for debugging, tfr should be printed out")
+            self.logger.info(str(self.scheduled_services))
             self._logger.info(INF_CONFIG_SET, str(settings))
 
         except Exception as ex:
